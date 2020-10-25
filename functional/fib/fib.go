@@ -1,13 +1,12 @@
-package main
+package fib
 
 import (
-	"bufio"
 	"fmt"
 	"io"
 	"strings"
 )
 
-func fibonacci() intGen {
+func Fibonacci() intGen {
 	a, b := 0, 1
 	return func() int {
 		a, b = b, a+b
@@ -26,26 +25,4 @@ func (g intGen) Read(p []byte) (n int, err error) {
 
 	// TODO: incorrect if p is too small!!
 	return strings.NewReader(s).Read(p)
-}
-
-func printFileContents(reader io.Reader) {
-	scanner := bufio.NewScanner(reader)
-
-	for scanner.Scan() {
-		fmt.Println(scanner.Text())
-	}
-}
-
-func main() {
-	f := fibonacci()
-	/*fmt.Println(f()) // 1
-	fmt.Println(f()) // 1
-	fmt.Println(f()) // 2
-	fmt.Println(f()) // 3
-	fmt.Println(f()) // 5
-	fmt.Println(f()) // 8
-	fmt.Println(f()) // 13
-	fmt.Println(f()) // 21*/
-
-	printFileContents(f)
 }
