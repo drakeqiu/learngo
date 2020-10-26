@@ -1,8 +1,6 @@
-package main
+package nonrepeating
 
-import "fmt"
-
-func lengthOfNoRepeatingSubStr(s string) int {
+func LengthOfNoRepeatingSubStr(s string) int {
 	lastOccurred := make(map[byte]int)
 	start := 0
 	maxLength := 0
@@ -16,19 +14,4 @@ func lengthOfNoRepeatingSubStr(s string) int {
 		lastOccurred[ch] = i
 	}
 	return maxLength
-}
-
-func main() {
-	fmt.Println(
-		lengthOfNoRepeatingSubStr("abcabcbb"))
-	fmt.Println(
-		lengthOfNoRepeatingSubStr("bbbbb"))
-	fmt.Println(
-		lengthOfNoRepeatingSubStr("pwwkew"))
-	fmt.Println(
-		lengthOfNoRepeatingSubStr(""))
-	fmt.Println(
-		lengthOfNoRepeatingSubStr("b"))
-	fmt.Println(
-		lengthOfNoRepeatingSubStr("abcdef"))
 }

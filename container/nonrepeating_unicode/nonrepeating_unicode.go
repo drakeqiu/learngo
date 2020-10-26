@@ -1,8 +1,6 @@
-package main
+package nonrepeating_unicode
 
-import "fmt"
-
-func lengthOfNoRepeatingSubStr(s string) int {
+func LengthOfNoRepeatingSubStr(s string) int {
 	lastOccurred := make(map[rune]int)
 	start := 0
 	maxLength := 0
@@ -16,15 +14,4 @@ func lengthOfNoRepeatingSubStr(s string) int {
 		lastOccurred[ch] = i
 	}
 	return maxLength
-}
-
-func main() {
-	fmt.Println(
-		lengthOfNoRepeatingSubStr("测试测试"))
-	fmt.Println(
-		lengthOfNoRepeatingSubStr("我的测试"))
-	fmt.Println(
-		lengthOfNoRepeatingSubStr("一二三二一"))
-	fmt.Println(
-		lengthOfNoRepeatingSubStr("黑化肥挥发发灰会花飞，灰化肥挥发发黑会飞花"))
 }

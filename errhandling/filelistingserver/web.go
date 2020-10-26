@@ -29,7 +29,7 @@ func errWrapper(
 			log.Printf("Error occurred "+
 				"handling request: %s",
 				err.Error())
-			log.Fatalf("Error handling request: %s", err.Error())
+			log.Printf("Error handling request: %s", err.Error())
 
 			if userError, ok := err.(userError); ok {
 				http.Error(writer,
